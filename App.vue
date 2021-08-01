@@ -9,7 +9,11 @@
     <view class="app__dices">
       <text class="app__dice" v-for="(item, index) of numberOfDices">{{dices[index]}}</text>
     </view>
-    <button title="SHUFFLE!" :on-press="shuffle"></button>
+    <button class="app__button" title="SHUFFLE!" :on-press="shuffle"></button>
+    <view class="app__inputs">
+      <text class="app__title">Поля для записи значений:</text>
+      <text-input class="app__input" v-for="item of 5"></text-input>
+    </view>
   </view>
 </template>
 
@@ -69,8 +73,9 @@ export default {
   padding-top: 20%;
 }
 .app__title {
-  width: 80%;
+  width: 100%;
   text-align: center;
+  margin-bottom: 15px;
 }
 .app__wrapper {
   width: 80%;
@@ -94,6 +99,18 @@ export default {
   text-align: center;
   width: 20%;
   margin-top: 15px;
+  margin-bottom: 15px;
+}
+.app__inputs {
+  margin-top: 50px;
+  width: 80%;
+}
+.app__input {
+  width: 100%;
+  border-width: 1px;
+  background-color: #eee;
+  border-style: solid;
+  border-radius: 5px;
   margin-bottom: 15px;
 }
 </style>
